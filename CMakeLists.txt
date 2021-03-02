@@ -15,3 +15,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(explicit_transitions ${PROJECT_SOURCE_DIR}/examples/explicit_transitions.cpp)
 add_executable(implicit_transitions ${PROJECT_SOURCE_DIR}/examples/implicit_transitions.cpp)
+add_executable(set_static_properties ${PROJECT_SOURCE_DIR}/examples/set_static_properties.cpp)
