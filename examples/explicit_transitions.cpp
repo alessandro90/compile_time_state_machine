@@ -31,10 +31,10 @@ struct state_c
 
 consteval auto run_machine()
 {
-    constexpr auto m = ctsm::builder_t<state_a>::build(1)
-                           .addTransition(tr::transition<event_a, state_a>)
-                           .addTransition(tr::transition<event_b, state_b>)
-                           .addTransition(tr::transition<event_c, state_c>);
+    constexpr auto m = builder_t<state_a>::build(1)
+                           .addTransition(transition_v<event_a, state_a>)
+                           .addTransition(transition_v<event_b, state_b>)
+                           .addTransition(transition_v<event_c, state_c>);
 
     static_assert(m.state().state_value == 1);
     static_assert(std::is_same_v<std::decay_t<decltype(m.state())>, state_a>);

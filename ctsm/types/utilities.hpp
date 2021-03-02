@@ -21,11 +21,6 @@ namespace ctsm::utils
                                              unique_t<Types...>::value;
     };
 
-    template <typename T>
-    struct unique_t<T> : std::true_type
-    {
-    };
-
     template <>
     struct unique_t<> : std::true_type
     {

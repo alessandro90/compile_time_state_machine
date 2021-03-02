@@ -13,7 +13,7 @@ namespace ctsm::tr
     };
 
     template <typename Event, typename State>
-    inline constexpr transition_t<Event, State> transition{};
+    inline constexpr transition_t<Event, State> transition_v{};
 
     template <typename...>
     struct get_by_event_t;
