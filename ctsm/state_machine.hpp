@@ -34,7 +34,7 @@ namespace ctsm
         }
 
         template <typename Event, typename... Args>
-        constexpr auto on(Args &&...args) const
+        static constexpr auto on(Args &&...args)
         {
             using state_t = typename tr::get_by_event_t<Event, transition_map_t>::typelist::type::state_t;
             return state_machine_t<state_t, tr::transition_t<Events, States>...>{std::forward<Args>(args)...};
