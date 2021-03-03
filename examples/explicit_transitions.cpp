@@ -39,11 +39,11 @@ consteval auto run_machine()
     static_assert(m.state().state_value == 1);
     static_assert(std::is_same_v<std::decay_t<decltype(m.state())>, state_a>);
 
-    constexpr auto m1 = m.template on<event_b>(15);
+    constexpr auto m1 = m.on<event_b>(15);
     static_assert(m1.state().state_value == 15);
     static_assert(std::is_same_v<std::decay_t<decltype(m1.state())>, state_b>);
 
-    constexpr auto m2 = m1.template on<event_c>(150);
+    constexpr auto m2 = m1.on<event_c>(150);
     static_assert(m2.state().state_value == 150);
     static_assert(std::is_same_v<std::decay_t<decltype(m2.state())>, state_c>);
 }

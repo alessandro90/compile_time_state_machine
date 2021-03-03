@@ -27,16 +27,16 @@ namespace ctsm::utils
     };
 
     template <typename...>
-    struct is_simple_type_t;
+    struct is_unqualified;
 
     template <typename T>
-    struct is_simple_type_t<T>
+    struct is_unqualified<T>
     {
         inline static constexpr bool value = std::is_same_v<std::decay_t<T>, T>;
     };
 
     template <>
-    struct is_simple_type_t<> : public std::true_type
+    struct is_unqualified<> : public std::true_type
     {
     };
 }
